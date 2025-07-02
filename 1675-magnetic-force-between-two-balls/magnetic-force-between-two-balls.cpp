@@ -16,7 +16,8 @@ public:
         int n = position.size();
         int l = 1;
         sort(position.begin(),position.end());
-        int r = position[n-1] - position[0];
+        // int r = position[n-1] - position[0];
+        int r = ceil(position[n - 1] / (m - 1.0));
         int ans = 1;
         while(l<=r){
             int mid = l + (r-l)/2;
