@@ -19,16 +19,18 @@ public:
         // int r = position[n-1] - position[0];
         int r = ceil(position[n - 1] / (m - 1.0));
         int ans = 1;
-        while(l<=r){
+        while(r-l>1){
             int mid = l + (r-l)/2;
             if(solve(position,mid,m)){
-                l = mid+1;
+                l = mid;
                 ans = mid;
             }
             else{
                 r = mid-1;
             }
         }
-        return ans;
+        // return ans;
+        if(solve(position,r,m)) return r;
+        else return l;
     }
 };
