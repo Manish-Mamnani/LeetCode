@@ -11,9 +11,9 @@ class Solution {
 public:
     TreeNode* solve(TreeNode* root, TreeNode* p, TreeNode* q){
         if(!root) return NULL;
+        if(p->val==root->val || q->val==root->val) return root;;
         TreeNode* l = solve(root->left,p,q);
         TreeNode* r = solve(root->right,p,q);
-        if(p->val==root->val || q->val==root->val) return root;;
         if(!(l && r)) return l?l:r;
         else return root;
     }
