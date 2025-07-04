@@ -14,11 +14,8 @@ public:
         if(!root) return NULL;
         int larger = p->val>q->val?p->val:q->val;
         int smaller = p->val<q->val?p->val:q->val;
-        cout<<smaller<<" "<<larger;
         if(smaller <= root->val && root->val <= larger) return root;
-        else{
-            if(larger<root->val) return lowestCommonAncestor(root->left,p,q);
-            else return lowestCommonAncestor(root->right,p,q);
-        }
+        else if(larger<root->val) return lowestCommonAncestor(root->left,p,q);
+        else return lowestCommonAncestor(root->right,p,q);
     }
 };
