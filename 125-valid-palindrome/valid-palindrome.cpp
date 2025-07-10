@@ -13,9 +13,7 @@ public:
                 r--;
                 continue;
             }
-            s[l] = tolower(s[l]);
-            s[r] = tolower(s[r]);
-            if(s[l]!=s[r]) return false;
+            if(tolower(s[l])!=tolower(s[r])) return false;
             l++;
             r--;
         }
