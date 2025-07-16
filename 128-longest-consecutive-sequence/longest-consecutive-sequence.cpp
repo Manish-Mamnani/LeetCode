@@ -12,12 +12,11 @@ public:
         for(auto it: s){
             if(it-1==temp){
                 tcount++;
-                temp = it;
             }
             else{
                 tcount = 1;
-                temp = it;
             }
+            temp = it;
             maxcount = max(maxcount,tcount);
         }
         return maxcount;
