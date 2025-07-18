@@ -42,8 +42,6 @@ public:
         TreeNode* first = NULL;
         TreeNode* second = NULL;
         swapp(root,first,second,f,s);
-        if(first && second){
-            swap(first->val,second->val);
-        }
+        swap(first->val,second->val);
     }
 };
