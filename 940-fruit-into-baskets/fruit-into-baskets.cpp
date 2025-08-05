@@ -7,13 +7,14 @@ public:
         int r = 0;
         int maxi = 1;
         while(l<=r && r<n){
-            mp[fruits[r]]++;
-            while(mp.size()>2){
-                mp[fruits[l]]--;
-                if(mp[fruits[l]]==0){
-                    mp.erase(fruits[l]);
+            mp[fruits[r]]=r;
+            if(mp.size()>2){
+                int mini = INT_MAX;
+                for(auto it:mp){
+                    if(it.second<mini) mini = it.second;
                 }
-                l++;
+                mp.erase(fruits[mini]);
+                l=mini+1;
             }
             maxi = max(maxi,r-l+1);
             r++;
