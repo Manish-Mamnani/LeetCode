@@ -3,25 +3,17 @@ public:
     int minimumArea(vector<vector<int>>& grid) {
         int n = grid.size();
         int m = grid[0].size();
-        int top = -1;
+        int top = n;
         int bottom = 0;
         int left = m;
         int right = 0;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j]==1){
-                    if(top==-1){
-                        top = i;
-                    }
-                    if(j<left){
-                        left = j;
-                    }
-                    if(j>right){
-                        right = j;
-                    }
-                    if(i>bottom){
-                        bottom = i;
-                    }
+                    top = min(top,i);
+                    bottom = max(bottom,i);
+                    left = min(left,j);
+                    right = max(right,j);
                 }
             }
         }
