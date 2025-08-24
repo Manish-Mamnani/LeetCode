@@ -20,7 +20,6 @@ public:
                 last = r;
                 count++;    
             } 
-            cout<<count<<endl;
             maxl = max(maxl,r-l+1-count);
             r++;
         }
