@@ -6,7 +6,6 @@ public:
         int area = 0;
         for(int i=0;i<n;i++){
             double h = sqrt((dimensions[i][0]*dimensions[i][0])+(dimensions[i][1]*dimensions[i][1]));
-            cout<<h<<" "<<diagonal<<endl;
             if(h > diagonal){
                 diagonal = h;
                 area =dimensions[i][0] * dimensions[i][1];
